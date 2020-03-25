@@ -1,7 +1,7 @@
 jarvis:
   global:
     author: zuojing
-    outputDir: D:\workspace\stark-master\output
+    outputDir: D:\workspace\jarvis\output
     fileOverride: true
     open: false
   datasource:
@@ -14,7 +14,7 @@ jarvis:
   strategy:
     entityLombokModel: true
     restControllerStyle: true
-    superServiceImplClass: com.wt.stark.service.BaseServiceImpl
+    superServiceImplClass: com.badgehu.jarvis.service.BaseServiceImpl
   template:
     entity: template/entity.java
     mapper: template/mapper.java

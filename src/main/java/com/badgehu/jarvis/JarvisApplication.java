@@ -7,10 +7,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableConfigurationProperties
-public class StarkApplication {
-
+public class JarvisApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StarkApplication.class, args);
+        SpringApplication.run(JarvisApplication.class, args);
     }
-
 }

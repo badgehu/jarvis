@@ -1,4 +1,4 @@
-package com.badgehu.jarvis.util;
+package com.badgehu.jarvis.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
@@ -8,13 +8,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * @author: qiyu
- * @date: 2020/1/3 11:49
- * @description:
- */
+
 @Configuration
-public class CodeGenerator {
+public class CodeGeneratorConfig {
 
     @Bean(name = "generator")
     public AutoGenerator autoGenerator() {
@@ -28,7 +24,7 @@ public class CodeGenerator {
     }
 
     @Bean(name = "globalConfig")
-    @ConfigurationProperties(prefix = "stark.global")
+    @ConfigurationProperties(prefix = "jarvis.global")
     public GlobalConfig globalConfig() {
         GlobalConfig globalConfig = new GlobalConfig();
         globalConfig.setServiceName("%sService");
@@ -37,7 +33,7 @@ public class CodeGenerator {
 
 
     @Bean(name = "datasource")
-    @ConfigurationProperties(prefix = "stark.datasource")
+    @ConfigurationProperties(prefix = "jarvis.datasource")
     public DataSourceConfig dataSourceConfig() {
         DataSourceConfig dataSourceConfig = new DataSourceConfig();
         dataSourceConfig.setDbType(DbType.MYSQL);
@@ -45,13 +41,13 @@ public class CodeGenerator {
     }
 
     @Bean(name = "packageConfig")
-    @ConfigurationProperties(prefix = "stark.package")
+    @ConfigurationProperties(prefix = "jarvis.package")
     public PackageConfig packageConfig() {
         return new PackageConfig();
     }
 
     @Bean(name = "strategyConfig")
-    @ConfigurationProperties(prefix = "stark.strategy")
+    @ConfigurationProperties(prefix = "jarvis.strategy")
     public StrategyConfig strategyConfig() {
         StrategyConfig strategyConfig = new StrategyConfig();
         strategyConfig.setNaming(NamingStrategy.underline_to_camel);
@@ -60,7 +56,7 @@ public class CodeGenerator {
     }
 
     @Bean(name = "templateConfig")
-    @ConfigurationProperties(prefix = "stark.template")
+    @ConfigurationProperties(prefix = "jarvis.template")
     public TemplateConfig templateConfig() {
         return new TemplateConfig();
     }
