@@ -1,0 +1,27 @@
+jarvis:
+  global:
+    author: zuojing
+    outputDir: D:\workspace\stark-master\output
+    fileOverride: true
+    open: false
+  datasource:
+    driverName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ipark?zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useAffectedRows=true
+    username: root
+    password: 123456
+  package:
+    parent: ai.ii.ipark.cloud.smurfs
+  strategy:
+    entityLombokModel: true
+    restControllerStyle: true
+    superServiceImplClass: com.wt.stark.service.BaseServiceImpl
+  template:
+    entity: template/entity.java
+    mapper: template/mapper.java
+    xml: template/mapper.xml
+    service: template/service.java
+    serviceImpl: template/serviceImpl.java
+    controller: template/controller.java
+table:
+  convert: true
+
